@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : Singleton<MainMenu>
@@ -37,7 +38,6 @@ public class MainMenu : Singleton<MainMenu>
     private void Update()
     {
         mainCamera.RotateAround(Vector3.zero, Vector3.up, Time.deltaTime * rotationSpeed);
-        mainMenu.localScale = new Vector3(Screen.width/330f, Screen.height/630f, 1);
     }
 
     public void SetMenuPart(MenuPart newPart)
@@ -71,7 +71,7 @@ public class MainMenu : Singleton<MainMenu>
 
     public void PlayGameButton()
     {
-
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void OptionsButton()
