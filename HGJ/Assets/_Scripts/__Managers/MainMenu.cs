@@ -9,8 +9,15 @@ public class MainMenu : Singleton<MainMenu>
     protected MenuPart currentMenuPart = MenuPart.Main;
     private bool changingMenuPart;
 
-    public GameObject mainPanel, optionsPanel;
+    public Transform mainCamera;
+    public float rotationSpeed = 10;
 
+    public RectTransform mainMenu;
+    [Header("Menu Panels")]
+    public GameObject mainPanel;
+    public GameObject optionsPanel;
+
+    [Header("Menu Items")]
     public GameObject soundCrossedOutIcon;
     public Michsky.UI.ModernUIPack.CustomDropdown qualityDropdown;
     public Michsky.UI.ModernUIPack.SliderManager volumeSlider;
@@ -25,6 +32,12 @@ public class MainMenu : Singleton<MainMenu>
         SetQuality(PlayerSetings.qualitySetting);
         qualityDropdown.selectedItemIndex = PlayerSetings.qualitySetting;
         volumeSlider.GetComponent<Slider>().value = PlayerSetings.soundVolume;
+    }
+
+    private void Update()
+    {
+        mainCamera.RotateAround(Vector3.zero, Vector3.up, Time.deltaTime * rotationSpeed);
+        mainMenu.localScale = new Vector3(Screen.width/330f, Screen.height/630f, 1);
     }
 
     public void SetMenuPart(MenuPart newPart)
