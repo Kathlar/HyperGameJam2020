@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : Singleton<MainMenu>
 {
     public enum MenuPart { Main, Options }
     protected MenuPart currentMenuPart = MenuPart.Main;
@@ -10,10 +11,20 @@ public class MainMenu : MonoBehaviour
 
     public GameObject mainPanel, optionsPanel;
 
+    public GameObject soundCrossedOutIcon;
+    public Michsky.UI.ModernUIPack.CustomDropdown qualityDropdown;
+    public Michsky.UI.ModernUIPack.SliderManager volumeSlider;
+
     private void Start()
     {
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
+
+        soundCrossedOutIcon.SetActive(!PlayerSetings.soundOn);
+
+        SetQuality(PlayerSetings.qualitySetting);
+        qualityDropdown.selectedItemIndex = PlayerSetings.qualitySetting;
+        volumeSlider.GetComponent<Slider>().value = PlayerSetings.soundVolume;
     }
 
     public void SetMenuPart(MenuPart newPart)
@@ -74,10 +85,23 @@ public class MainMenu : MonoBehaviour
                 QualitySettings.SetQualityLevel(2);
                 break;
         }
+        PlayerSetings.SetQualitySetting(value);
     }
 
     public void OpenLink(string link)
     {
         Application.OpenURL(link);
+    }
+
+    public void SetSound()
+    {
+        PlayerSetings.SetSound();
+        soundCrossedOutIcon.SetActive(!PlayerSetings.soundOn);
+    }
+
+    public void SetSoundVolume()
+    {
+        PlayerSetings.SetSound(volumeSlider.GetComponent<Slider>().value);
+        soundCrossedOutIcon.SetActive(!PlayerSetings.soundOn);
     }
 }
