@@ -16,10 +16,10 @@ TagManager:
   - PostProcessing
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Characters
+  - Items
+  - Destroyables
+  - Bodies
   - 
   - 
   - 
