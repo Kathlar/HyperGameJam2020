@@ -26,7 +26,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "InControl/Setup InputManager Settings" )]
+		[MenuItem( "Tools/InControl/Setup InputManager Settings" )]
 		static void GenerateInputManagerAsset()
 		{
 			ApplyAxisPresets();
@@ -34,7 +34,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "InControl/Check InputManager Settings" )]
+		[MenuItem("Tools/InControl/Check InputManager Settings")]
 		static void CheckInputManagerAsset()
 		{
 			if (CheckAxisPresets())

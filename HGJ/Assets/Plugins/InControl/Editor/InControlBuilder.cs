@@ -7,7 +7,7 @@ namespace InControl
 
 	static class InControlBuilder
 	{
-		[MenuItem( "GameObject/InControl/Manager", false, 100 )]
+		[MenuItem("GameObject/Tools/InControl/Manager", false, 100 )]
 		static void CreateInputManager()
 		{
 			MonoBehaviour component;

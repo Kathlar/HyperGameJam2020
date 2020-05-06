@@ -7,7 +7,7 @@ namespace InControl
 
 	static class TouchBuilder
 	{
-		[MenuItem( "GameObject/InControl/Touch/Manager", false, 2 )]
+		[MenuItem("GameObject/Tools/InControl/Touch/Manager", false, 2 )]
 		static void CreateTouchManager()
 		{
 			foreach (var component in GameObject.FindObjectsOfType<TouchManager>())
@@ -31,7 +31,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "GameObject/InControl/Touch/Button Control", false, 3 )]
+		[MenuItem( "GameObject/Tools/InControl/Touch/Button Control", false, 3 )]
 		public static void CreateTouchButtonControl()
 		{
 			var touchManager = GameObject.FindObjectOfType<TouchManager>();
@@ -57,7 +57,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "GameObject/InControl/Touch/Stick Control", false, 3 )]
+		[MenuItem("GameObject/Tools/InControl/Touch/Stick Control", false, 3 )]
 		public static void CreateTouchStickControl()
 		{
 			var touchManager = GameObject.FindObjectOfType<TouchManager>();
@@ -84,7 +84,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "GameObject/InControl/Touch/Swipe Control", false, 3 )]
+		[MenuItem("GameObject/Tools/InControl/Touch/Swipe Control", false, 3 )]
 		public static void CreateTouchSwipeControl()
 		{
 			var touchManager = GameObject.FindObjectOfType<TouchManager>();
@@ -108,7 +108,7 @@ namespace InControl
 		}
 
 
-		[MenuItem( "GameObject/InControl/Touch/Track Control", false, 3 )]
+		[MenuItem("GameObject/Tools/InControl/Touch/Track Control", false, 3 )]
 		public static void CreateTouchTrackControl()
 		{
 			var touchManager = GameObject.FindObjectOfType<TouchManager>();

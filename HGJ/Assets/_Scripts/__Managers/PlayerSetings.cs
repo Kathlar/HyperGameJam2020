@@ -13,6 +13,8 @@ public class PlayerSetings : Singleton<PlayerSetings>
 
     public bool clearPlayerPrefs;
 
+    public static float mouseSensitivity = 1f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -22,7 +24,14 @@ public class PlayerSetings : Singleton<PlayerSetings>
             if (PlayerPrefs.GetInt("SettingsSet") == 0) SaveSettings();
             LoadSettings();
         }
-        else PlayerPrefs.DeleteAll();
+        else ClearPrefs();
+    }
+
+    [Sirenix.OdinInspector.Button("Clear")]
+    void ClearPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("cleared");
     }
 
     private static void LoadSettings()
@@ -33,6 +42,9 @@ public class PlayerSetings : Singleton<PlayerSetings>
         SetSound(soundOn);
 
         qualitySetting = PlayerPrefs.GetInt("Quality");
+
+        mouseSensitivity = PlayerPrefs.GetFloat("Mouse_Sensitivity");
+        SetMouseSensitivity(mouseSensitivity);
     }
 
     private static void SaveSettings()
@@ -43,6 +55,8 @@ public class PlayerSetings : Singleton<PlayerSetings>
         PlayerPrefs.SetInt("Quality", qualitySetting);
 
         PlayerPrefs.SetInt("SettingsSet", 1);
+
+        PlayerPrefs.SetFloat("Mouse_Sensitivity", mouseSensitivity);
         PlayerPrefs.Save();
     }
 
@@ -72,5 +86,10 @@ public class PlayerSetings : Singleton<PlayerSetings>
     public static void SetQualitySetting(int value)
     {
         qualitySetting = value;
+    }
+
+    public static void SetMouseSensitivity(float sensitivity)
+    {
+        mouseSensitivity = sensitivity;
     }
 }

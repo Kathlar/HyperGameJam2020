@@ -10,6 +10,9 @@ public class MainMenu : Singleton<MainMenu>
     protected MenuPart currentMenuPart = MenuPart.Main;
     private bool changingMenuPart;
 
+    [SerializeField]
+    public GameManagerDatabaseLevels levels;
+
     public Transform mainCamera;
     public float rotationSpeed = 10;
 
@@ -21,10 +24,12 @@ public class MainMenu : Singleton<MainMenu>
     [Header("Menu Items")]
     public GameObject soundCrossedOutIcon;
     public Michsky.UI.ModernUIPack.CustomDropdown qualityDropdown;
-    public Michsky.UI.ModernUIPack.SliderManager volumeSlider;
+    public Michsky.UI.ModernUIPack.SliderManager volumeSlider, sensitivitySlider;
 
     private void Start()
     {
+        if (GameManager.MusicAudioSource) Destroy(GameManager.MusicAudioSource.gameObject);
+
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
 
@@ -33,6 +38,9 @@ public class MainMenu : Singleton<MainMenu>
         SetQuality(PlayerSetings.qualitySetting);
         qualityDropdown.selectedItemIndex = PlayerSetings.qualitySetting;
         volumeSlider.GetComponent<Slider>().value = PlayerSetings.soundVolume;
+        sensitivitySlider.GetComponent<Slider>().value = PlayerSetings.mouseSensitivity;
+
+        PlayerInputManager.SetCursor(true);
     }
 
     private void Update()
@@ -71,7 +79,14 @@ public class MainMenu : Singleton<MainMenu>
 
     public void PlayGameButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        int levelFinnishedNumber = PlayerPrefs.GetInt("CurrentLevel");
+        if (levelFinnishedNumber == 0) levelFinnishedNumber = 1;
+        if (levelFinnishedNumber < 4 && levelFinnishedNumber > -1)
+            SceneManager.LoadScene(levels.tutorialLevelNames[levelFinnishedNumber - 1]);
+        else
+            SceneManager.LoadScene(levels.randomLevelNames[
+                UnityEngine.Random.Range(0, levels.randomLevelNames.Count)]);
+            
     }
 
     public void OptionsButton()
@@ -116,5 +131,10 @@ public class MainMenu : Singleton<MainMenu>
     {
         PlayerSetings.SetSound(volumeSlider.GetComponent<Slider>().value);
         soundCrossedOutIcon.SetActive(!PlayerSetings.soundOn);
+    }
+
+    public void SetMouseSensitivity()
+    {
+        PlayerSetings.SetMouseSensitivity(sensitivitySlider.GetComponent<Slider>().value);
     }
 }

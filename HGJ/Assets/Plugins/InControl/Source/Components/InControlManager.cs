@@ -79,7 +79,7 @@ namespace InControl
 			{
 				if (logDebugInfo)
 				{
-					Debug.Log( "InControl (version " + InputManager.Version + ")" );
+					//Debug.Log( "InControl (version " + InputManager.Version + ")" );
 					Logger.OnLogMessage -= LogMessage;
 					Logger.OnLogMessage += LogMessage;
 				}
@@ -197,9 +197,9 @@ namespace InControl
 		{
 			switch (logMessage.type)
 			{
-				case LogMessageType.Info:
-					Debug.Log( logMessage.text );
-					break;
+				//case LogMessageType.Info:
+				//	Debug.Log( logMessage.text );
+				//	break;
 				case LogMessageType.Warning:
 					Debug.LogWarning( logMessage.text );
 					break;
