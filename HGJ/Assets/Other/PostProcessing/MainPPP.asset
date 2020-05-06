@@ -63,6 +63,7 @@ MonoBehaviour:
   - {fileID: -1595834017001705059}
   - {fileID: 5773766229607651629}
   - {fileID: 8566008254826496918}
+  - {fileID: 8526136959170097110}
 --- !u!114 &5773766229607651629
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1374,6 +1375,133 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
+--- !u!114 &8526136959170097110
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74483714bbf784b45b0c9c7c76035dd8, type: 3}
+  m_Name: Fog
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  skyboxTex:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  useSceneSettings:
+    overrideState: 1
+    value: 0
+  fogMode:
+    overrideState: 1
+    value: 2
+  globalDensity:
+    overrideState: 1
+    value: 1
+  fogStartDistance:
+    overrideState: 1
+    value: 170
+  fogEndDistance:
+    overrideState: 1
+    value: 600
+  colorSource:
+    overrideState: 1
+    value: 0
+  skyboxMipLevel:
+    overrideState: 1
+    value: 0
+  fogColor:
+    overrideState: 1
+    value: {r: 0.76, g: 0.94, b: 1, a: 1}
+  fogColorGradient:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  gradientDistance:
+    overrideState: 1
+    value: 1000
+  gradientUseFarClipPlane:
+    overrideState: 1
+    value: 1
+  distanceFog:
+    overrideState: 1
+    value: 1
+  distanceDensity:
+    overrideState: 1
+    value: 1
+  useRadialDistance:
+    overrideState: 1
+    value: 1
+  skyboxInfluence:
+    overrideState: 1
+    value: 1
+  enableDirectionalLight:
+    overrideState: 1
+    value: 0
+  useLightDirection:
+    overrideState: 1
+    value: 1
+  useLightColor:
+    overrideState: 1
+    value: 1
+  useLightIntensity:
+    overrideState: 1
+    value: 1
+  lightColor:
+    overrideState: 1
+    value: {r: 1, g: 0.89, b: 0.55, a: 1}
+  lightDirection:
+    overrideState: 1
+    value: {x: 0, y: 0.5, z: -1}
+  lightIntensity:
+    overrideState: 1
+    value: 1
+  heightFog:
+    overrideState: 1
+    value: 1
+  height:
+    overrideState: 1
+    value: 12.1
+  heightDensity:
+    overrideState: 1
+    value: 1
+  heightFogNoise:
+    overrideState: 1
+    value: 0
+  heightNoiseTex:
+    overrideState: 1
+    value: {fileID: 0}
+    defaultState: 1
+  heightNoiseSize:
+    overrideState: 1
+    value: 0.25
+  heightNoiseStrength:
+    overrideState: 1
+    value: 1
+  heightNoiseSpeed:
+    overrideState: 1
+    value: 2
+  lightScattering:
+    overrideState: 1
+    value: 0
+  scatterIntensity:
+    overrideState: 1
+    value: 10
+  scatterThreshold:
+    overrideState: 1
+    value: 1
+  scatterDiffusion:
+    overrideState: 1
+    value: 10
+  scatterSoftKnee:
+    overrideState: 1
+    value: 0.5
 --- !u!114 &8566008254826496918
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1401,10 +1529,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.399
+    value: 0.422
   smoothness:
     overrideState: 1
-    value: 0.2
+    value: 0.272
   roundness:
     overrideState: 1
     value: 1
