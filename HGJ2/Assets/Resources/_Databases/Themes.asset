@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b73fee7dc1b40e45b0164e1302a151a, type: 3}
+  m_Name: Themes
+  m_EditorClassIdentifier: 
+  emptyTheme:
+    theme: 0
+    postProcessProfile: {fileID: 11400000, guid: 24e68b2cbb934423890aa0cca67aee29,
+      type: 2}
+    musicClip: {fileID: 8300000, guid: 709c1ef2f6b631e478b0939807cdde00, type: 3}
+  themes:
+  - theme: 1
+    postProcessProfile: {fileID: 11400000, guid: 679ef3f8b89a7e044b52839317544e60,
+      type: 2}
+    musicClip: {fileID: 8300000, guid: 709c1ef2f6b631e478b0939807cdde00, type: 3}
+  - theme: 2
+    postProcessProfile: {fileID: 11400000, guid: 03ccffe298de391428119b0124f8f63a,
+      type: 2}
+    musicClip: {fileID: 8300000, guid: 709c1ef2f6b631e478b0939807cdde00, type: 3}
+  - theme: 3
+    postProcessProfile: {fileID: 11400000, guid: 44cb9f0fc4359ba4b87dfd19c6bc2c4e,
+      type: 2}
+    musicClip: {fileID: 8300000, guid: 709c1ef2f6b631e478b0939807cdde00, type: 3}
