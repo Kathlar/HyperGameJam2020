@@ -38,6 +38,8 @@ public class PlayerController : CharacterControler
 
         TimeManager.SetTimeScale(moveVector.magnitude);
 
+        moveVector *= PlayerSetings.mouseSensitivity * 5;
+
         if (PlayerInputManager.Values.leftMouse.wasPressed)
         {
             timeOfLastShootPress = Time.realtimeSinceStartup;

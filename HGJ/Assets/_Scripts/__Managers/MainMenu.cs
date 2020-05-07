@@ -25,6 +25,7 @@ public class MainMenu : Singleton<MainMenu>
     public GameObject soundCrossedOutIcon;
     public Michsky.UI.ModernUIPack.CustomDropdown qualityDropdown;
     public Michsky.UI.ModernUIPack.SliderManager volumeSlider, sensitivitySlider;
+    public Text sensitivityText;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class MainMenu : Singleton<MainMenu>
         qualityDropdown.selectedItemIndex = PlayerSetings.qualitySetting;
         volumeSlider.GetComponent<Slider>().value = PlayerSetings.soundVolume;
         sensitivitySlider.GetComponent<Slider>().value = PlayerSetings.mouseSensitivity;
+        sensitivityText.text = PlayerSetings.roundedMouseSensitivity.ToString();
 
         PlayerInputManager.SetCursor(true);
     }
@@ -136,5 +138,6 @@ public class MainMenu : Singleton<MainMenu>
     public void SetMouseSensitivity()
     {
         PlayerSetings.SetMouseSensitivity(sensitivitySlider.GetComponent<Slider>().value);
+        sensitivityText.text = PlayerSetings.roundedMouseSensitivity.ToString();
     }
 }

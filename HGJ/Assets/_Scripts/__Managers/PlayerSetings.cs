@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +15,13 @@ public class PlayerSetings : Singleton<PlayerSetings>
     public bool clearPlayerPrefs;
 
     public static float mouseSensitivity = 1f;
+    public static float roundedMouseSensitivity
+    {
+         get
+        {
+            return Mathf.Round(mouseSensitivity * mouseSensitivity * 10f) / 10;
+        }
+    }
 
     protected override void Awake()
     {

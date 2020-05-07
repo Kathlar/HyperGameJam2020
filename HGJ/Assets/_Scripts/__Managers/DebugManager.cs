@@ -21,6 +21,8 @@ public class DebugManager : Singleton<DebugManager>
 
     private void Update()
     {
+        Debug.Log(PlayerSetings.roundedMouseSensitivity);
+
         DebugOnSet = true;
         if (debugOn != wasDebugOn) DebugOn = debugOn;
         wasDebugOn = debugOn;
