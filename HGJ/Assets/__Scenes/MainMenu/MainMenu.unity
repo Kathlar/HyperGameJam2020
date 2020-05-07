@@ -6891,7 +6891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565fcc7ca3b0ed04a9b8f988b50391ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugOn: 1
+  debugOn: 0
 --- !u!1 &1583783559
 GameObject:
   m_ObjectHideFlags: 0
@@ -10194,7 +10194,7 @@ PrefabInstance:
     - target: {fileID: 647191658059068817, guid: 27935fd01f5f9c749a3dfde6f4580a45,
         type: 3}
       propertyPath: clearPlayerPrefs
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 647191658059068822, guid: 27935fd01f5f9c749a3dfde6f4580a45,
         type: 3}
