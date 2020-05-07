@@ -37,6 +37,7 @@ public class LevelFlowControl : Singleton<LevelFlowControl>
 
     public static void NextLevel()
     {
+        Projectile.DestroyAllProjectiles();
         PlayerPrefs.SetInt("CurrentLevel", Instance.tutorialLvlNumber);
         PlayerPrefs.Save();
         if (Instance.tutorialLvlNumber > -1 && Instance.tutorialLvlNumber < 4)

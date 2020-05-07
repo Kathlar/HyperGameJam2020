@@ -14,18 +14,13 @@ public class MainCameraController : MonoBehaviour
     public Transform target { get; private set; }
     private Vector3 offset;
 
-    static float barsStartValue = .1f;
+    const float barsStartValue = .1f;
 
     private void Awake()
     {
         mainCamera = GetComponentInChildren<Camera>();
         ppVolume = GetComponentInChildren<PostProcessVolume>();
-    }
-
-    private void OnDestroy()
-    {
-        ppVolume.profile.TryGetSettings(out SCPE.BlackBars bars);
-        bars.maxSize.value = barsStartValue;
+        ppVolume.profile = Instantiate(ppVolume.profile);
     }
 
     private void LateUpdate()
@@ -58,18 +53,15 @@ public class MainCameraController : MonoBehaviour
             SCPE.BlackBars bars;
             ppVolume.profile.TryGetSettings(out bars);
             TimeManager.TimeJump(1);
-            if(barsStartValue == -1)
-                barsStartValue = bars.maxSize.value;
-            bars.maxSize.value = 1;
-            if (bars)
+            bars.size.value = 1;
+            do
             {
-                do
-                {
-                    bars.maxSize.value -= Time.deltaTime;
-                    yield return null;
-                }
-                while (bars.maxSize > barsStartValue);
+                ppVolume.profile.TryGetSettings(out bars);
+                bars.size.value = Mathf.Clamp(bars.size.value - Time.deltaTime * 2f, 
+                    0, 1);
+                yield return null;
             }
+            while (bars.size.value > barsStartValue);
             fadingOut = false;
         }
     }
@@ -86,10 +78,10 @@ public class MainCameraController : MonoBehaviour
             {
                 do
                 {
-                    bars.maxSize.value += Time.deltaTime * 2.5f;
+                    bars.size.value += Time.deltaTime * 2.5f;
                     yield return null;
                 }
-                while (bars.maxSize < 1);
+                while (bars.size.value < 1);
             }
             fadingIn = false;
         }

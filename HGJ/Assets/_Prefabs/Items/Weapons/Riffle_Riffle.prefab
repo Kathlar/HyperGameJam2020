@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: bulletsPerShoot
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4424195386434818422, guid: 03222cf2216e314479bde80dfc455fd3,
+        type: 3}
+      propertyPath: cooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5458409886327855359, guid: 03222cf2216e314479bde80dfc455fd3,
         type: 3}
       propertyPath: m_LocalPosition.x

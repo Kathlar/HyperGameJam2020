@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+
+    protected static List<Projectile> projectiles;
     public Collider mainCollider { get; private set; }
     private Rigidbody rb;
 
@@ -22,6 +24,17 @@ public class Projectile : MonoBehaviour
         if (movementType == MovementType.Rigidbody) rb = GetComponent<Rigidbody>();
 
         trail = GetComponentInChildren<TrailRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        if (projectiles == null) projectiles = new List<Projectile>();
+        projectiles.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        projectiles.Remove(this);
     }
 
     public void SetUp(Collider ignoreCollider)
@@ -47,7 +60,12 @@ public class Projectile : MonoBehaviour
             damageable.GetDamage(damagePower);
         }
 
-        if(trail)
+        OnHitEffect();
+    }
+
+    void OnHitEffect()
+    {
+        if (trail)
         {
             trail.transform.SetParent(GameManager.orphanParent);
             Destroy(trail.gameObject, trail.time);
@@ -59,5 +77,15 @@ public class Projectile : MonoBehaviour
         Destroy(hitEffect.gameObject, hitEffect.main.duration);
 
         Destroy(gameObject);
+    }
+
+    public static void DestroyAllProjectiles()
+    {
+        if (projectiles == null) projectiles = new List<Projectile>();
+        if (projectiles.Count == 0) return;
+        for(int i = projectiles.Count -1; i >= 0; i--)
+        {
+            projectiles[i].OnHitEffect();
+        }
     }
 }

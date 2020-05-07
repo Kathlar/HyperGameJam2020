@@ -451,10 +451,10 @@ MonoBehaviour:
     value: 0
   size:
     overrideState: 1
-    value: 1
+    value: 1.0058037
   maxSize:
     overrideState: 1
-    value: 0.1
+    value: 1
 --- !u!114 &5697763737208774061
 MonoBehaviour:
   m_ObjectHideFlags: 3
