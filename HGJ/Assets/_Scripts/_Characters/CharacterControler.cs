@@ -39,7 +39,7 @@ public class CharacterControler : MonoBehaviour
     public bool TargetInMeleeDistance()
     {
         float distance = DistanceToTarget();
-        if (distance > 0 && distance < 1.8f) return true;
+        if (distance > 0 && distance < 2.4f) return true;
         return false;
     }
 

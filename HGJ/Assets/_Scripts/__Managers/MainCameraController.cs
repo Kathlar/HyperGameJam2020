@@ -52,7 +52,6 @@ public class MainCameraController : MonoBehaviour
 
     public IEnumerator FadeFromBlackCoroutine()
     {
-        yield return null;
         if (!fadingOut)
         {
             fadingOut = true;
@@ -77,7 +76,6 @@ public class MainCameraController : MonoBehaviour
 
     public IEnumerator FadeToBlackCoroutine()
     {
-        yield return null;
         if (!fadingIn)
         {
             fadingIn = true;
@@ -88,7 +86,7 @@ public class MainCameraController : MonoBehaviour
             {
                 do
                 {
-                    bars.maxSize.value += Time.deltaTime;
+                    bars.maxSize.value += Time.deltaTime * 2.5f;
                     yield return null;
                 }
                 while (bars.maxSize < 1);

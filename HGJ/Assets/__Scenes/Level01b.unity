@@ -302,7 +302,7 @@ PrefabInstance:
     - target: {fileID: 5516842068788167161, guid: 2f046922c3643df40867a49eaf4287ed,
         type: 3}
       propertyPath: canDropItems
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f046922c3643df40867a49eaf4287ed, type: 3}
@@ -1636,6 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c9543206ab18b44893bd6f79d9cc69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialLvlNumber: -1
   levelTheme: 0
   finnishCondition: 1
 --- !u!4 &1507453064
@@ -5767,7 +5768,7 @@ PrefabInstance:
     - target: {fileID: 5516842068788167161, guid: 2f046922c3643df40867a49eaf4287ed,
         type: 3}
       propertyPath: canDropItems
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f046922c3643df40867a49eaf4287ed, type: 3}
@@ -5858,7 +5859,7 @@ PrefabInstance:
     - target: {fileID: 5516842068788167161, guid: 2f046922c3643df40867a49eaf4287ed,
         type: 3}
       propertyPath: canDropItems
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f046922c3643df40867a49eaf4287ed, type: 3}
@@ -7119,7 +7120,7 @@ PrefabInstance:
     - target: {fileID: 5516842068788167161, guid: 2f046922c3643df40867a49eaf4287ed,
         type: 3}
       propertyPath: canDropItems
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f046922c3643df40867a49eaf4287ed, type: 3}

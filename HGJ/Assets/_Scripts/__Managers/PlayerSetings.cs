@@ -27,19 +27,18 @@ public class PlayerSetings : Singleton<PlayerSetings>
     {
         base.Awake();
 
-        if (!clearPlayerPrefs)
+        if (clearPlayerPrefs)
         {
-            if (PlayerPrefs.GetInt("SettingsSet") == 0) SaveSettings();
-            LoadSettings();
+            ClearPrefs();
         }
-        else ClearPrefs();
+        if (PlayerPrefs.GetInt("SettingsSet") == 0) SaveSettings();
+        LoadSettings();
     }
 
     [Sirenix.OdinInspector.Button("Clear")]
     void ClearPrefs()
     {
         PlayerPrefs.DeleteAll();
-        Debug.Log("cleared");
     }
 
     private static void LoadSettings()

@@ -130,8 +130,14 @@ public class GameManager : Singleton<GameManager>
 
     public static void LoadRandomLevel()
     {
-        LoadLevel(Levels.randomLevelNames[
-            Random.Range(0, Levels.randomLevelNames.Count)]);
+        string levelName = "";
+        do
+        {
+            levelName = Levels.randomLevelNames[
+            Random.Range(0, Levels.randomLevelNames.Count)];
+        }
+        while (levelName == SceneManager.GetActiveScene().name);
+        LoadLevel(levelName);
     }
 
     /// <summary>

@@ -39,6 +39,7 @@ public class PlayerController : CharacterControler
         TimeManager.SetTimeScale(moveVector.magnitude);
 
         moveVector *= PlayerSetings.mouseSensitivity * 5;
+        moveVector *= Time.unscaledDeltaTime * 500;
 
         if (PlayerInputManager.Values.leftMouse.wasPressed)
         {

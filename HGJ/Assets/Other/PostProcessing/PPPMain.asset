@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   mode:
     overrideState: 1
     value: 1
@@ -266,7 +266,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   skyboxTex:
     overrideState: 1
     value: {fileID: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
     value: 0
   mode:
     overrideState: 1
-    value: 1
+    value: 0
   invertFadeDistance:
     overrideState: 1
     value: 0
